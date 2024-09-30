@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiến lên rửa chén</title>
+    <shortcut></shortcut>
+</head>
+<style>
+    #item1,
+    #item2,
+    #item3,
+    #item4 {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    img {
+        max-width: 100%;
+        width: 100px;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    input {
+        width: 100px;
+        height: 50px;
+        margin-left: auto;
+        /* Đẩy input sang lề phải */
+        margin-right: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 40px;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    #congratulations {
+    position: fixed; /* Đặt vị trí cố định */
+    top: 50%; /* Đưa phần tử vào giữa chiều dọc */
+    left: 50%; /* Đưa phần tử vào giữa chiều ngang */
+    transform: translate(-50%, -50%); /* Căn giữa chính xác */
+    background-color: rgba(255, 255, 255, 0.9); /* Nền trắng mờ */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Đổ bóng cho đẹp */
+    text-align: center; /* Căn giữa chữ */
+    z-index: 1000; /* Đảm bảo nằm trên cùng */
+    display: none; /* Ẩn phần tử ban đầu */
+    width: 200px;
+    background-color: #57C38C;
+    color: rgb(241, 239, 239);
+}
+#overlay {
+    position: fixed; /* Đặt vị trí cố định */
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    background-color: rgba(0, 0, 0, 0.7); /* Nền tối với độ mờ */
+    display: none; /* Ẩn phần tử ban đầu */
+    z-index: 999; /* Đảm bảo nằm trên cùng */
+}
+
+</style>
+
+<body>
+    <audio id="congratulationsSound" src="img/badday.mp4"></audio>
+    <div id="congratulations" class="hidden"></div>
+    <div id="overlay" class="hidden"></div>
+    <div class="container">
+        <ul>
+            <li id="item1">
+                <p>1</p>
+                <img src="img/thaongo.jpg" alt="">
+                <p>Thao Ngo:</p>
+                <input type="number" class="gameInput" data-player="1">
+            </li>
+            <li id="item2">
+                <p>2</p>
+                <img src="img/huynguyen.jpg" alt="">
+                <p>Mario Lopez:</p>
+                <input type="number" class="gameInput" data-player="2">
+            </li>
+            <li id="item3">
+                <p>3</p>
+                <img src="img/quanngo.jpg" alt="">
+                <p>Quan Ngo:</p>
+                <input type="number" class="gameInput" data-player="3">
+            </li>
+            <li id="item4">
+                <p>4</p>
+                <img src="img/phong.jpg" alt="">
+                <p>Thanh Phong:</p>
+                <input type="number" class="gameInput" data-player="4">
+            </li>
+        </ul>
+        <div class="button">
+            <button class="enter">Enter</button>
+            <button class="calculate">Calculate</button>
+            <button class="submit">Submit</button>
+        </div>
+
+        <table id="scoreTable">
+            <tr>
+                <th>Name</th>
+            </tr>
+            <tr>
+                <td  data-player="Thao Ngo">Thao Ngo</td>
+            </tr>
+            <tr>
+                <td  data-player="Mario Lopez">Mario Lopez</td>
+            </tr>
+            <tr>
+                <td  data-player="Quan Ngo">Quan Ngo</td>
+            </tr>
+            <tr>
+                <td  data-player="Thanh Phong">Thanh Phong</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <script src="tienlenruachen.js"></script>
+</body>
+
+</html>
